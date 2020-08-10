@@ -30,4 +30,8 @@ cmd $python manage.py create_user 1  3
 Run the Server $python manage.py runserver
 go to the localhost http://127.0.0.1:8000 we get the rest API framework
 
+Included Admin interface for doing DB changes(If required)
+username : sandhyaks
+password: 1234
+
 
