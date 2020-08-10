@@ -7,12 +7,16 @@ from .models import activityPeriods
 from faker import Factory
 # Defining a factory
 faker = Factory.create()
+import random
 
+n=None;
 class activityPeriodsFactory(factory.DjangoModelFactory):
+    global n;
+    n = random.randint(0,10)*60;
     class Meta:
-        model = activityPeriods    
-    start_time = datetime.now().strftime("%a %I:%M%:%S p")
-    end_time =  (datetime.now()+ timedelta(seconds=120)).strftime("%a %I:%M%:%S p")
+        model = activityPeriods  
+    start_time =(datetime.now()+timedelta(seconds=n)).strftime("%a %I:%M:%S %p")
+    end_time =  (datetime.now()+timedelta(seconds=n+7200)).strftime("%a %I:%M:%S %p")
     
 class UserFactory(DjangoModelFactory):
     class Meta:
